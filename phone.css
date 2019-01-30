@@ -61,6 +61,10 @@ body {
   color: black;
 }
 
+#content-contact-list > .blob {
+  width: var(--content-width);
+  margin-bottom: var(--gutter-width);
+}
 
 label {
   height: var(--input-height);
