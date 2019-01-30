@@ -23,11 +23,10 @@ $(document).ready(function() {
       newContact[item.name] = item.value;
     });
     addContactElt(newContact);
+    clearForm();
   });
 
-  $("#add-contact-clear").click(function() {
-    $("#add-contact").find("input").val("");
-  });
+  $("#add-contact-clear").click(clearForm);
 });
 
 function makeActive(tabElt) {
@@ -41,4 +40,8 @@ function makeActive(tabElt) {
 
 function addContactElt(contact) {
   $("#content-contact-list").append(`<div class="blob">${contact.name}</div>`);
+}
+
+function clearForm() {
+  $("#add-contact").find("input").val("");
 }
