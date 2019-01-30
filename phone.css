@@ -1,0 +1,55 @@
+:root {
+  --gutter-width: 10px;
+  --blob-height: 50px;
+}
+
+.tab {
+  width: 150px;
+  height: 50px;
+  background: green;
+  color: white;
+}
+
+.tab.active {
+  background: red;
+}
+
+.blob {
+  background-color: #ccc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#num-display {
+  margin: var(--gutter-width) 0px;
+  width: 320px;
+  height: var(--blob-height);
+}
+
+#num-blobs {
+  margin: var(--gutter-width) 0px;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: var(--blob-height) var(--blob-height) var(--blob-height) var(--blob-height);
+  grid-gap: var(--gutter-width);
+}
+
+#num-blobs > .blob {
+  line-height: 50px;
+}
+
+#dial-blobs {
+  margin: var(--gutter-width) 0px;
+  display: grid;
+  grid-template-columns: 155px 155px;
+  grid-template-rows: 50px;
+  grid-gap: var(--gutter-width);
+}
+
+#dial-blobs > .blob {
+  line-height: 50px;
+}
+
+#dial-keys {
+  display: grid;
+}
