@@ -1,5 +1,21 @@
+let contacts = [{
+  name: "Ben Shapiro",
+  phone: "3034928570",
+  email: "ben.shapiro@colorado.edu",
+  sprite: "pikachu"
+},{
+  name: "Shaun Kane",
+  phone: "3037357209",
+  email: "shaun.kane@colorado.edu",
+  sprite: "squirtle"
+}];
+
 $(document).ready(function() {
   makeActive($(".tab:contains(Dialer)"));
+  
+  for (let contact of contacts) {
+    addContactElt(contact);
+  }
 
   $(".tab").click(function() {
     makeActive($(this));
@@ -24,9 +40,13 @@ $(document).ready(function() {
     });
     addContactElt(newContact);
     clearForm();
+    return false;
   });
 
-  $("#add-contact-clear").click(clearForm);
+  $("#add-contact-clear").click(function(e) {
+    clearForm();
+    return false;
+  });
 });
 
 function makeActive(tabElt) {
@@ -39,9 +59,18 @@ function makeActive(tabElt) {
 }
 
 function addContactElt(contact) {
-  $("#content-contact-list").append(`<div class="blob">${contact.name}</div>`);
+  let $table = $("#content-contact-list table");
+  $("#content-contact-list table tbody")
+    .append(`<tr>
+      <td><img src="img/${contact.sprite}.png" alt="${contact.sprite}"></td>
+      <td>${contact.name}</td>
+      <td>${contact.phone}</td>
+      <td>${contact.email}</td>
+    </tr>`);
 }
 
 function clearForm() {
-  $("#add-contact").find("input").val("");
+  $("#add-contact").find("#add-contact-name").val("");
+  $("#add-contact").find("#add-contact-phone").val("");
+  $("#add-contact").find("#add-contact-email").val("");
 }
