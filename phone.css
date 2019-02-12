@@ -104,23 +104,13 @@ td[headers="nav accesskey"], td[headers="dial accesskey"] {
 #content-help table {
   border: 1px solid var(--dark-color);
   border-collapse: collapse;
+  margin: var(--gutter-width) 0px;
 }
 
 
 #content-help th {
   border: 1px solid var(--dark-color);
   border-collapse: collapse;
-}
-
-/*
-#content-help table {
-  border: 1px solid var(--dark-color);
-  border-collapse: collapse;
-}
-*/
-
-#content-help table {
-  margin-top: var(--gutter-width);
 }
 
 #content-contact-list img {
